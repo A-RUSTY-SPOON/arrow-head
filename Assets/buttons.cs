@@ -9,4 +9,8 @@ public class buttons : MonoBehaviour
     {
         SceneManager.LoadScene("Level Select");
     }
+    public void Options()
+    {
+        SceneManager.LoadScene("Options menu");
+    }
 }

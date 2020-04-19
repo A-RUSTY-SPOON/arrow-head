@@ -7,6 +7,8 @@ public class DropDownButtons : MonoBehaviour
 {
     public GameObject BackButton;
     public GameObject ExitButton;
+    public GameObject ResumeButton;
+    public GameObject PauseFilter;
     public static bool GameIsPaused = false;
 
     // Start is called before the first frame update
@@ -35,6 +37,7 @@ public class DropDownButtons : MonoBehaviour
     {
         BackButton.SetActive(false);
         ExitButton.SetActive(false);
+        ResumeButton.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
@@ -43,17 +46,23 @@ public class DropDownButtons : MonoBehaviour
     {
         BackButton.SetActive(true);
         ExitButton.SetActive(true);
+        ResumeButton.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
 
     public void GoBack()
     {
-        SceneManager.LoadScene("Level Selector");
+        SceneManager.LoadScene("Level Select");
     }
 
     public void Exit()
     {
         
+    }
+
+    public void ResumeGame()
+    {
+        Resume();
     }
 }

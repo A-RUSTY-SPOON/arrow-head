@@ -6,9 +6,11 @@ public class FireBullet : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public static bool inMenu = false;
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        GetComponent<DropDownButtons>();
+        if (Input.GetButtonDown("Fire1") && DropDownButtons.GameIsPaused == false)
         {
             Shoot();
         }
